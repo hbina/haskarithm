@@ -3,7 +3,7 @@ module Main where
 import           Test.Tasty
 import           Test.Tasty.HUnit
 
-import           Problem168
+import           Problem1295
 
 --  NOTE  ::  Add Problem(s) here
 import           TemplateLib
@@ -12,7 +12,7 @@ import           TemplateLib
 --  NOTE  ::  Add the functions here
 main :: IO ()
 main = do
-  defaultMain (testGroup "Leetcode Tests" [testSayYo, testAdd5, testProblem168])
+  defaultMain (testGroup "Leetcode Tests" [testSayYo, testAdd5, testProblem1295])
 
 -- NOTE ::  Add tests here
 testSayYo :: TestTree
@@ -25,8 +25,8 @@ testAdd5 :: TestTree
 testAdd5 =
   testCase "Testing add5 1" (assertEqual "Should add 5 to get 10" 10 (add5 5))
 
-testProblem168 :: TestTree
-testProblem168 =
+testProblem1295 :: TestTree
+testProblem1295 =
   testCase
     "Testing findNumbers 1"
     (assertEqual
