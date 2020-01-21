@@ -3,6 +3,8 @@ module Main where
 import           Test.Tasty
 import           Test.Tasty.HUnit
 
+import           Problem168
+
 --  NOTE  ::  Add Problem(s) here
 import           TemplateLib
 
@@ -10,15 +12,24 @@ import           TemplateLib
 --  NOTE  ::  Add the functions here
 main :: IO ()
 main = do
-  defaultMain (testGroup "Leetcode Tests" [sayYoTest, add5Test])
+  defaultMain (testGroup "Leetcode Tests" [testSayYo, testAdd5, testProblem168])
 
 -- NOTE ::  Add tests here
-sayYoTest :: TestTree
-sayYoTest =
+testSayYo :: TestTree
+testSayYo =
   testCase
-    "Testing sayYo"
+    "Testing sayYo 1"
     (assertEqual "Should say Yo to Friend!" "Yo Friend!" (sayYo "Friend"))
 
-add5Test :: TestTree
-add5Test =
-  testCase "Testing add5" (assertEqual "Should add 5 to get 10" 10 (add5 5))
+testAdd5 :: TestTree
+testAdd5 =
+  testCase "Testing add5 1" (assertEqual "Should add 5 to get 10" 10 (add5 5))
+
+testProblem168 :: TestTree
+testProblem168 =
+  testCase
+    "Testing findNumbers 1"
+    (assertEqual
+       "There are 2 numbers with even digits in [12, 345, 2, 6, 7896]"
+       2
+       (findNumbers [12, 345, 2, 6, 7896]))
