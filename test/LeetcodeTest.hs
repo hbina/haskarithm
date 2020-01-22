@@ -1,8 +1,12 @@
 module Main where
 
+import           Data.Set         (Set, lookupMax, lookupMin)
+import qualified Data.Set         as Set
+
 import           Test.Tasty
 import           Test.Tasty.HUnit
 
+import           Problem1
 import           Problem1295
 
 --  NOTE  ::  Add Problem(s) here
@@ -12,7 +16,10 @@ import           TemplateLib
 --  NOTE  ::  Add the functions here
 main :: IO ()
 main = do
-  defaultMain (testGroup "Leetcode Tests" [testSayYo, testAdd5, testProblem1295])
+  defaultMain
+    (testGroup
+       "Leetcode Tests"
+       [testSayYo, testAdd5, testProblem1295, testProblem1])
 
 -- NOTE ::  Add tests here
 testSayYo :: TestTree
@@ -33,3 +40,12 @@ testProblem1295 =
        "There are 2 numbers with even digits in [12, 345, 2, 6, 7896]"
        2
        (findNumbers [12, 345, 2, 6, 7896]))
+
+testProblem1 :: TestTree
+testProblem1 =
+  testCase
+    "Testing twoSum 1"
+    (assertEqual
+       "The indices add up to 9 in [3, 2, 5, 7, 11, 15] should be (0, 1)"
+       (Set.fromList [(1, 3), (3, 1)])
+       (Set.fromList (twoSum [3, 2, 5, 7, 11, 15] 9)))

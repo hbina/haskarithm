@@ -1,10 +1,10 @@
 name:                leetcode-haskell
 version:             0.1.0.0
-github:              "githubuser/leetcode-haskell"
+github:              "hbina/leetcode-haskell"
 license:             BSD3
-author:              "Author name here"
-maintainer:          "example@example.com"
-copyright:           "2020 Author name here"
+author:              "Hanif Bin Ariffin"
+maintainer:          "hanif.ariffin.4326@gmail.com"
+copyright:           "2020 Hanif Bin Ariffin"
 
 extra-source-files:
 - README.md
@@ -17,7 +17,7 @@ extra-source-files:
 # To avoid duplicated efforts in documentation and dealing with the
 # complications of embedding Haddock markup inside cabal files, it is
 # common to point users to the README.md file.
-description:         Please see the README on GitHub at <https://github.com/githubuser/leetcode-haskell#readme>
+description:         Please see the README on GitHub at <https://github.com/hbina/leetcode-haskell#readme>
 
 dependencies:
 - base >= 4.7 && < 5
@@ -38,7 +38,7 @@ executables:
 
 tests:
   leetcode-haskell-test:
-    main:                Spec.hs
+    main:                LeetcodeTest.hs
     source-dirs:         test
     ghc-options:
     - -threaded
@@ -46,3 +46,7 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - leetcode-haskell
+    - base
+    - tasty
+    - tasty-hunit
+    - containers
