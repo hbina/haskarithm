@@ -1,3 +1,3 @@
-# Changelog for leetcode-haskell
+# Changelog for haskarithm
 
 ## Unreleased changes

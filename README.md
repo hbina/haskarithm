@@ -1,4 +1,4 @@
-# leetcode-haskell
+# haskarithm
 
 ## Motivations
 
